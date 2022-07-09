@@ -2,8 +2,8 @@ const currentDate = new Date();
 const currentMonth = currentDate.getMonth();
 const currentYear = currentDate.getFullYear();
 const currentMonthEl = document.querySelector('h2');
-
-console.dir(document.body);
+const currentMonthDatesEl = document.querySelector('.dates__numbers li')
+ 
 
 currentMonthEl.innerText = 
 currentYear.toString()  + ' / ' + currentDate.toLocaleString('eng', {month : 'long'}) ;
@@ -16,5 +16,23 @@ const lastDateOfMonth = new Date(firstDateOfMonth);
 lastDateOfMonth.setMonth(lastDateOfMonth.getMonth()+1);
 lastDateOfMonth.setDate(0);
 
+firstDateOfMonthDay = firstDateOfMonth.getDay();
+
+lastDateOfMonthDay = lastDateOfMonth.getDay();
 console.dir (firstDateOfMonth);
 console.dir (lastDateOfMonth);
+console.dir (firstDateOfMonthDay);
+console.dir (lastDateOfMonthDay);
+console.dir (getAllDays);
+
+let days = "";
+function getAllDays(currentMonth){
+for (i = 1; i <= lastDateOfMonth; i++){
+    days += `<li>${i}</li>`;
+ }
+};
+
+getAllDays.innerHTML = days;
+
+
+currentMonthDatesEl.innerHTML = getAllDays;
