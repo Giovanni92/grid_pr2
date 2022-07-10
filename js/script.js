@@ -2,7 +2,7 @@ const currentDate = new Date();
 const currentMonth = currentDate.getMonth();
 const currentYear = currentDate.getFullYear();
 const currentMonthEl = document.querySelector('h2');
-const currentMonthDatesEl = document.querySelector('.dates__numbers li')
+const currentMonthDatesEl = document.querySelector('.dates__numbers')
  
 
 currentMonthEl.innerText = 
@@ -18,21 +18,23 @@ lastDateOfMonth.setDate(0);
 
 firstDateOfMonthDay = firstDateOfMonth.getDay();
 
-lastDateOfMonthDay = lastDateOfMonth.getDay();
+lastDateOfMonthDay = lastDateOfMonth.getDate();
 console.dir (firstDateOfMonth);
 console.dir (lastDateOfMonth);
 console.dir (firstDateOfMonthDay);
 console.dir (lastDateOfMonthDay);
 console.dir (getAllDays);
+console.log(typeof (lastDateOfMonthDay));
 
-let days = "";
+let days ;
 function getAllDays(currentMonth){
-for (i = 1; i <= lastDateOfMonth; i++){
+for (i = 1; i <= lastDateOfMonthDay; i++){
     days += `<li>${i}</li>`;
  }
 };
 
 getAllDays.innerHTML = days;
 
+currentMonthDatesEl.innerHTML = days;
 
-currentMonthDatesEl.innerHTML = getAllDays;
+
