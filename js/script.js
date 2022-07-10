@@ -23,17 +23,14 @@ console.dir (firstDateOfMonth);
 console.dir (lastDateOfMonth);
 console.dir (firstDateOfMonthDay);
 console.dir (lastDateOfMonthDay);
-console.dir (getAllDays);
+
 console.log(typeof (lastDateOfMonthDay));
 
-let days ;
-function getAllDays(currentMonth){
+let days = " " ;
+
 for (i = 1; i <= lastDateOfMonthDay; i++){
     days += `<li>${i}</li>`;
  }
-};
-
-getAllDays.innerHTML = days;
 
 currentMonthDatesEl.innerHTML = days;
 
